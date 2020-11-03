@@ -8,7 +8,7 @@
 export default {
   head() {
     return {
-      title: 'Create an Event - Real World Events',
+      title: 'Create an Event',
       hid: 'description',
       name: 'description',
       content: 'Create an event for your neighbourhood',

@@ -8,7 +8,7 @@
 export default {
   head() {
     return {
-      title: 'Event Listing - Real World Events',
+      title: 'Event Listing',
       hid: 'description',
       name: 'description',
       content:
