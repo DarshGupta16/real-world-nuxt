@@ -6,18 +6,22 @@
 
 <script>
 export default {
-	head() {
-		return {
-			title: 'Event #' + this.id,
-			hid: 'description',
-			name: 'description',
-			content: 'What you need to know about event #' + this.id
-		}
-	},
-	computed() {
-		id () {
-			this.$route.params.id
-		}
-	}
+  head() {
+    return {
+      title: 'Event #' + this.id,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'What you need to know about event #' + this.id,
+        },
+      ],
+    }
+  },
+  computed: {
+    id() {
+      return this.$route.params.id
+    },
+  },
 }
 </script>
