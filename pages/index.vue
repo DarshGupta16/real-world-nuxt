@@ -23,12 +23,20 @@ export default {
         'Where you can find all the events taking place in your neighbourhood',
     }
   },
-  asyncData({ $axios }) {
-    return $axios.get('http://localhost:3000/events').then((res) => {
-      return {
-        events: res.data,
-      }
-    })
+  asyncData({ $axios, error }) {
+    return $axios
+      .get('http://localhost:3000/events')
+      .then((res) => {
+        return {
+          events: res.data,
+        }
+      })
+      .catch((e) => {
+        error({
+          statusCode: 503,
+          message: 'Unable to fetch events at this time. Please try again',
+        })
+      })
   },
   components: {
     EventCard,
