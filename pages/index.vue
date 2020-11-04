@@ -15,14 +15,8 @@ import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService.js'
 
 export default {
-  head() {
-    return {
-      title: 'Event Listing',
-      hid: 'description',
-      name: 'description',
-      content:
-        'Where you can find all the events taking place in your neighbourhood',
-    }
+  components: {
+    EventCard,
   },
   async asyncData({ error }) {
     try {
@@ -37,8 +31,14 @@ export default {
       })
     }
   },
-  components: {
-    EventCard,
+  head() {
+    return {
+      title: 'Event Listing',
+      hid: 'description',
+      name: 'description',
+      content:
+        'Where you can find all the events taking place in your neighbourhood',
+    }
   },
 }
 </script>
